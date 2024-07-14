@@ -1,0 +1,28 @@
+.card {
+    border: 1px solid #28a745;
+    margin-bottom: 20px;
+    width: 400px;
+  }
+  
+  .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #28a745;
+  }
+  
+  .badge {
+    padding: 0.5em 1em;
+    font-size: 0.875em;
+  }
+  
+  .badge-success {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .badge-warning {
+    background-color: #ffc107;
+    color: white;
+  }
+  .text-danger{
+    color: red !important;
+  }
