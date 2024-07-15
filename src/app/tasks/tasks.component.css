@@ -158,12 +158,13 @@
    */
 
    /* Typography */
-body {
+   
+   body {
   font-family: 'Merriweather', serif;
   background-color: #f8f9fa;
 }
 
-h1, h2 {
+h1 {
   font-family: 'Playfair Display', serif;
   color: #333;
 }
