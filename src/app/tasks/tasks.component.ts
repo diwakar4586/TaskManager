@@ -1,4 +1,4 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser,formatDate  } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -99,5 +99,38 @@ export class TasksComponent implements OnInit {
   sortTasksByStatus() {
     const statusOrder: { [key in Task['status']]: number } = { 'to-do': 1, 'in-progress': 2, 'completed': 3 };
     this.tasks.sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
+  }
+  exportTasksToCSV() {
+    const csvData = this.generateCSV();
+    this.downloadCSV(csvData, 'tasks.csv');
+  }
+  generateCSV(): string {
+    const header = ['Title', 'Description', 'Due Date', 'Priority', 'Status'];
+    const rows = this.tasks.map(task => [
+      task.title,
+      task.description,
+      task.dueDate,
+      task.priority,
+      task.status
+    ]);
+    const csvContent = [
+      header.join(','),
+      ...rows.map(row => row.join(',')) 
+    ].join('\n');
+
+    return csvContent;
+  }
+  downloadCSV(csvContent: string, filename: string) {
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    if (link.download !== undefined) { 
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', filename);
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   }
 }
