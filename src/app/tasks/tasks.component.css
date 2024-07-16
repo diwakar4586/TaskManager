@@ -1,5 +1,4 @@
 
-  }
   
   h1 {
     font-family: 'Playfair Display', serif;
@@ -163,6 +162,7 @@
       display: block;
       width: 72%;
   }
+}
 
   .text-danger{
     color: red !important;
@@ -172,7 +172,7 @@
     margin: 0 auto;
   }
 
-   */
+
    /* another part */
 /*    
    .container {
