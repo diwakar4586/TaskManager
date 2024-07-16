@@ -150,4 +150,20 @@
   .shadow-lg {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
   }
-  
+
+  @media (max-width: 660px) {
+    .export-btn {
+      margin-left: 5rem !important;
+      margin-top: 1rem !important;
+      display: block;
+      width: 72%;
+  }
+}
+  @media (max-width: 440px) {
+    .export-btn {
+      margin-left: 3rem !important;
+      margin-top: 1rem !important;
+      display: block;
+      width: 72%;
+  }
+}
