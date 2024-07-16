@@ -3,7 +3,7 @@
     padding: 0;
 }
 .bg-img{
-    background-image: url('../assets/img2.jpg');
+    /* background-image: url('../assets/img2.jpg'); */
     height: 100%;
     width: 100vw;
     background-position: center;
